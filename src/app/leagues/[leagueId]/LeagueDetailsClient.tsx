@@ -59,7 +59,7 @@ interface LeagueInfo {
 interface BaseTeam {
   id: string;
   name: string;
-  matches_played: number;
+  matches: number;
   wins: number;
   losses: number;
   points: number;
@@ -173,7 +173,7 @@ export default function LeagueDetailsClient({ leagueId }: { leagueId: string }) 
           const baseTeam = {
             id: doc.id,
             name: data.name,
-            matches_played: data.matches_played || 0,
+            matches: data.matches || 0,
             wins: data.wins || 0,
             losses: data.losses || 0,
             points: data.points || 0,
@@ -367,7 +367,7 @@ export default function LeagueDetailsClient({ leagueId }: { leagueId: string }) 
                           <td className="px-4 py-3 text-left">{index + 1}</td>
                           <td className="px-4 py-3 text-left font-medium">{team.name}</td>
                           <td className="px-4 py-3 text-center font-semibold text-blue-600">{team.points}</td>
-                          <td className="px-4 py-3 text-center">{team.matches_played}</td>
+                          <td className="px-4 py-3 text-center">{team.matches}</td>
                           <td className="px-4 py-3 text-center text-green-600">{team.wins}</td>
                           <td className="px-4 py-3 text-center text-red-600">{team.losses}</td>
                           {/* Sport-specific data */}
