@@ -31,7 +31,7 @@ export function Chatbot() {
       setMessages(prev => [...prev, userMessage]);
       setIsLoading(true);
 
-      const response = await fetch('http://localhost:5670/webhook/d2ef0176-568f-4f86-8e48-e5cdbc2c07aa', {
+      const response = await fetch('https://vkjr.app.n8n.cloud/webhook/d2ef0176-568f-4f86-8e48-e5cdbc2c07aa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
